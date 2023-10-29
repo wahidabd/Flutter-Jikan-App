@@ -1,10 +1,9 @@
-import 'package:aniflix/config.dart';
 import 'package:aniflix/common/constants.dart';
+import 'package:aniflix/config.dart';
 import 'package:aniflix/providers/anime_provider.dart';
 import 'package:aniflix/services/cutsom_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -12,17 +11,17 @@ void main() async {
   await setDefaultOrientation();
   setStatusBarColor();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   void initState() {
     super.initState();
@@ -37,7 +36,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider.value(value: AnimeProvider()),
+        ChangeNotifierProvider.value(
+          value: AnimeProvider(),
+        ),
       ],
       child: MaterialApp(
         title: 'Aniflix',

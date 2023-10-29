@@ -11,7 +11,7 @@ class AnimeProvider extends ChangeNotifier {
   final Set<int> _wishlist = {};
 
   AnimeProvider(){
-    fetchAnimes();
+    // fetchAnimes();
     fetchBanner();
   }
 
@@ -33,7 +33,7 @@ class AnimeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> fetchAnimes() async {
+  Future<dynamic> fetchAnimes() async {
     setStatus(DataStatus.loading);
     Map<String, dynamic> data = await _apiService.get(endpoint: '/top/anime');
 
@@ -54,7 +54,8 @@ class AnimeProvider extends ChangeNotifier {
 
   Future<void> fetchBanner() async {
     final data = await _apiService.get(endpoint: '/random/anime');
-    _bannerAnime = Anime.fromJson(data);
+    debugPrint(data.toString());
+    _bannerAnime = Anime.fromJson(data['data']);
     notifyListeners();
   }
 

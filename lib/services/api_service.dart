@@ -48,7 +48,7 @@ class ApiService {
       }
     } catch (e) {
       debugPrint(e.toString());
-      throw e.toString();
+      // throw e.toString();
     }
   }
 }
