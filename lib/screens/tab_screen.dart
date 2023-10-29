@@ -1,3 +1,4 @@
+import 'package:aniflix/config/styles.dart';
 import 'package:aniflix/screens/favorite_screen.dart';
 import 'package:aniflix/screens/home_screen.dart';
 import 'package:aniflix/screens/search_screen.dart';
@@ -77,11 +78,19 @@ class _TabScreenState extends State<TabScreen> {
         ),
         child: Row(
           children: [
-            const Text('Aniflix')
+            const Text('Aniflix', style: TextStyles.appBarStyle),
+            const Spacer(),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications_outlined,
+                color: Colors.red,
+                size: 28,
+              ),
+            ),
           ],
         ),
       ),
     );
   }
-
 }
