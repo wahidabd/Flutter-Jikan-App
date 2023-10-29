@@ -1,4 +1,5 @@
 import 'package:aniflix/models/anime.dart';
+import 'package:aniflix/widgets/detail_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 
 class AnimeWidget extends StatefulWidget {
@@ -16,7 +17,12 @@ class _AnimeWidgetState extends State<AnimeWidget> {
     final size = MediaQuery.of(context).size;
 
     return GestureDetector(
-      onTap: () => {},
+      onTap: () => showBottomSheet(
+        context: context,
+        builder: (context) {
+          return DetailBottomSheet(anime: widget.anime);
+        },
+      ),
       child: Container(
         margin: const EdgeInsets.all(4),
         width: size.width * 0.32,

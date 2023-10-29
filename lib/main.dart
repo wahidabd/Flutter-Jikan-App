@@ -1,6 +1,7 @@
 import 'package:aniflix/common/constants.dart';
 import 'package:aniflix/config.dart';
 import 'package:aniflix/providers/anime_provider.dart';
+import 'package:aniflix/providers/search_provider.dart';
 import 'package:aniflix/services/cutsom_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +40,9 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider.value(
           value: AnimeProvider(),
         ),
+        ChangeNotifierProvider.value(
+          value: SearchProvider(),
+        )
       ],
       child: MaterialApp(
         title: 'Aniflix',

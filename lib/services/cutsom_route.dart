@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:aniflix/screens/anime_detail.dart';
 import 'package:aniflix/screens/favorite_screen.dart';
 import 'package:aniflix/screens/home_screen.dart';
 import 'package:aniflix/screens/search_screen.dart';
@@ -15,6 +18,13 @@ class CustomRoute {
         return MaterialPageRoute(builder: (_) => const SearchScreen());
       case '/favoriteScreen':
         return MaterialPageRoute(builder: (_) => const FavoriteScreen());
+      case '/detailScreen':
+        final args = json.decode(settings.arguments.toString());
+        final id = args['id'];
+        final type = args['type'];
+        return MaterialPageRoute(
+          builder: (_) => AnimeDetail(id: id),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
