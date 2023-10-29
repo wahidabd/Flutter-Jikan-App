@@ -22,6 +22,18 @@ class _HomeScreenState extends State<HomeScreen>
           const AnimeGenre(
             id: 1,
             genre: "Action",
+          ),
+          const AnimeGenre(
+            id: 2,
+            genre: "Adventure",
+          ),
+          const AnimeGenre(
+            id: 22,
+            genre: "Romance",
+          ),
+          const AnimeGenre(
+            id: 4,
+            genre: "Comedy",
           )
         ],
       ),

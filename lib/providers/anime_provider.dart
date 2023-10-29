@@ -11,7 +11,7 @@ class AnimeProvider extends ChangeNotifier {
   final Set<int> _wishlist = {};
 
   AnimeProvider(){
-    // fetchAnimes();
+    fetchAnimes();
     fetchBanner();
   }
 
