@@ -47,7 +47,7 @@ class SearchProvider with ChangeNotifier {
         ..._searchResults,
       ];
 
-  List<Genre> get gneres => [
+  List<Genre> get genres => [
         ..._genres,
       ];
 
